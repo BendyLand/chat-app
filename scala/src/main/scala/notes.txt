@@ -1,4 +1,4 @@
-ChatGPT Prompt:
+ChatGPT Recommendation:
 Learn about networking:
 Understand the basics of networking, including TCP/IP, sockets, and HTTP protocols. This knowledge is essential for communication between clients and servers in a chat application.
 
@@ -30,6 +30,7 @@ Continuous improvement:
 Continuously iterate on your chat app based on user feedback and your own experiences. Consider adding new features, optimizing performance, and improving security over time.
 By following these steps, you'll gain valuable experience in building complex systems, handling concurrency, and creating real-time applications. Good luck with your chat app project, Ben! It sounds like an exciting endeavor to undertake.
 
+
 Self Contained:
 Simplified authentication and authorization:
 Since your chat app is a mockup project, you might simplify or even omit user authentication and authorization. You could hardcode a few user accounts or allow users to enter a username without password authentication.
@@ -52,6 +53,7 @@ While testing remains important, you can simplify the testing process for your m
 Documentation and presentation:
 Since your project is a mockup, consider documenting the design decisions, limitations, and assumptions you've made along the way. This will help others understand the purpose and context of your project when you present or share it.
 By making these adjustments, you can streamline the development process and focus on building a functional mockup of your chat app without the overhead of deploying it for production use. This approach allows you to experiment, learn, and iterate on your project in a controlled environment.
+
 
 Endpoint:
 Basic Messaging Functionality:

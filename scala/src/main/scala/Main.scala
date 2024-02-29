@@ -1,4 +1,8 @@
+import user.*
 
 @main def hello(): Unit =
-    println("Hello world!")
+    val user = User.create()
+    println(user.username)
+    println(user.password)
+
 
