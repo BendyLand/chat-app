@@ -1,4 +1,5 @@
 import user.*
+import usermanager.*
 
 @main def hello(): Unit =
     val user = User.create
@@ -8,4 +9,5 @@ import user.*
     println(user2.username)
     println(user2.password)
 
+    UserManager.displayUsers
 

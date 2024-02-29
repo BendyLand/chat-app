@@ -84,3 +84,4 @@ Optimizing performance to handle larger user loads more efficiently.
 Adding additional features or enhancements based on user feedback or personal preferences.
 Exploring advanced topics like concurrent programming (e.g., in Elixir) or implementing additional functionality (e.g., file sharing, emoji support) as learning exercises in other languages.
 Remember that software development is an iterative process, and there's always room for improvement. Setting a clear endpoint for your project allows you to balance learning, experimentation, and refinement effectively. Good luck with your chat app project, Ben! It's an exciting journey ahead.
+https://chat.openai.com/share/2f97bba0-d74f-4af9-b321-968bf864ba04
