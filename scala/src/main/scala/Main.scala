@@ -2,8 +2,9 @@ import user.*
 import usermanager.*
 
 @main def hello(): Unit =
-    val user = User.create
-    val user2 = User.create
+    val user = UserManager.createUser
+    val user2 = UserManager.createUser
+
     println(user.username)
     println(user.password)
     println(user2.username)
