@@ -1,10 +1,12 @@
 package usermanager
 
-import scala.collection.mutable
+import scala.collection.mutable.{HashMap, ListBuffer}
 import user.*
 
 object UserManager:
-    var users = mutable.HashMap.empty[User, mutable.ListBuffer[String]]
+    // `users` is a HashMap to track users along with with their mailbox, 
+    // which itself is a HashMap for sent and received messages. 
+    var users = HashMap.empty[User, HashMap[String, ListBuffer[String]]]
 
     def createUser: User = 
         var username = User.chooseUserName
@@ -14,7 +16,11 @@ object UserManager:
         while !validatePassword(password) do
             password = User.choosePassword
         val newUser = User(username, password)
-        users += (newUser, mutable.ListBuffer.empty[String])
+        val mailboxes = HashMap(
+            "sent" -> ListBuffer.empty[String],
+            "received" -> ListBuffer.empty[String]
+        )
+        users += (newUser -> mailboxes)
         newUser
 
     def displayUsers = 
