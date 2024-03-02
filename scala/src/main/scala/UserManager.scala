@@ -4,8 +4,7 @@ import scala.collection.mutable.{HashMap, ListBuffer}
 import user.*
 
 object UserManager:
-    // `users` is a HashMap to track users along with with their mailbox, 
-    // which itself is a HashMap for sent and received messages. 
+    
     var users = HashMap.empty[String, HashMap[String, ListBuffer[String]]]
 
     def displayInbox(user: User) = 
