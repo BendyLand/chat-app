@@ -2,4 +2,4 @@ package message
 
 import user.User
 
-case class Message(from: User, body: String)
+case class Message(from: String, body: String)

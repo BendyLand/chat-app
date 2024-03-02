@@ -8,8 +8,8 @@ object UserManager:
     // which itself is a HashMap for sent and received messages. 
     var users = HashMap.empty[String, HashMap[String, ListBuffer[String]]]
 
-    def displayInbox(user: User): ListBuffer[String] = 
-        users(user.username)("received")
+    def displayInbox(user: User) = 
+        println(users(user.username)("received"))
 
     def addNewUser(user: User) = 
         val mailboxes = HashMap(

@@ -13,3 +13,7 @@ import server.*
     userManager.displayUsers
 
     val server = Server()
+    val testMessage = Message(user1.username, "This is a test message for the first time")
+
+    server.sendMessage(testMessage, user2.username)
+    userManager.displayInbox(user2)
