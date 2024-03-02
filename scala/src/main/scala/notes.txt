@@ -5,9 +5,6 @@ Understand the basics of networking, including TCP/IP, sockets, and HTTP protoco
 Study concurrency concepts:
 Concurrency is crucial for handling multiple users in a chat app. Learn about concurrency models, concurrent programming techniques, and how to avoid common pitfalls like race conditions and deadlocks.
 
-Familiarize yourself with web development:
-If you're planning to build a web-based chat app, learn about web development technologies such as HTML, CSS, and JavaScript. Also, explore web frameworks or libraries like Phoenix (for Elixir), Actix (for Rust), or Play Framework (for Scala).
-
 Design your application architecture:
 Plan the structure of your chat application, including how users will connect, send messages, and receive messages in real-time. Consider using a client-server architecture with a WebSocket-based communication protocol for real-time updates.
 
