@@ -4,18 +4,18 @@ import scala.collection.mutable.{HashMap, ListBuffer}
 import user.*
 
 object UserManager:
-    
     var users = HashMap.empty[String, HashMap[String, ListBuffer[String]]]
 
     def displayInbox(user: User) = 
-        println(users(user.username)("received"))
+        println("Here are the messages from your inbox: ")
+        users(user.username)("received").foreach(println)
 
     def addNewUser(user: User) = 
         val mailboxes = HashMap(
             "sent" -> ListBuffer.empty[String],
             "received" -> ListBuffer.empty[String]
         )
-        users += (user.username, mailboxes)
+        users += user.username -> mailboxes 
 
     def displayUsers = 
         users.keys.foreach(println)
