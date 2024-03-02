@@ -1,14 +1,15 @@
 import user.*
 import usermanager.*
+import message.*
+import server.*
 
 @main def hello(): Unit =
-    val user = UserManager.createUser
-    val user2 = UserManager.createUser
+    val user1 = User.create
+    val user2 = User.create
+    val userManager = UserManager
+    userManager.addNewUser(user1)
+    userManager.addNewUser(user2)
 
-    println(user.username)
-    println(user.password)
-    println(user2.username)
-    println(user2.password)
+    userManager.displayUsers
 
-    UserManager.displayUsers
-
+    val server = Server()

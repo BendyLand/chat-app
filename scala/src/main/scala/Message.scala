@@ -1,6 +1,5 @@
 package message
 
-import user.*
+import user.User
 
-case class Message(message: String)
-
+case class Message(from: User, body: String)

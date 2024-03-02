@@ -6,28 +6,23 @@ import user.*
 object UserManager:
     // `users` is a HashMap to track users along with with their mailbox, 
     // which itself is a HashMap for sent and received messages. 
-    var users = HashMap.empty[User, HashMap[String, ListBuffer[String]]]
+    var users = HashMap.empty[String, HashMap[String, ListBuffer[String]]]
 
-    def createUser: User = 
-        var username = User.chooseUserName
-        while !validateUsername(username) do
-            username = User.chooseUserName
-        var password = User.choosePassword
-        while !validatePassword(password) do
-            password = User.choosePassword
-        val newUser = User(username, password)
+    def displayInbox(user: User): ListBuffer[String] = 
+        users(user.username)("received")
+
+    def addNewUser(user: User) = 
         val mailboxes = HashMap(
             "sent" -> ListBuffer.empty[String],
             "received" -> ListBuffer.empty[String]
         )
-        users += (newUser -> mailboxes)
-        newUser
+        users += (user.username, mailboxes)
 
     def displayUsers = 
-        users.keys.foreach { user => println(user._1) }
+        users.keys.foreach(println)
 
     def validateUsername(username: String) = 
-        val foundUsers: List[String] = users.keys.toList.map(_.username)
+        val foundUsers: List[String] = users.keys.toList
         if foundUsers.contains(username) then
             println("Username already taken. Please choose a different one.")
             false
