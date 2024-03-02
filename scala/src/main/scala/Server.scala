@@ -1,7 +1,6 @@
 package server
 
 import message.Message
-import user.User
 import usermanager.*
 
 class Server:
