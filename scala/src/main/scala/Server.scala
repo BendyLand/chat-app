@@ -16,19 +16,20 @@ import java.net.{ServerSocket, Socket}
 import java.io.{BufferedReader, InputStreamReader, PrintWriter}
 
 object Server: 
-    def main(args: Array[String]): Unit = 
-        val serverPort = 9999 // This is the port number the server will listen on
-        val serverSocket = new ServerSocket(serverPort)
-        println(s"Server is listening on port $serverPort")
-
+    @main def init(): Unit = 
+        val serverPort = 9998 // this is where the server port will listen
+        val serverSocket = ServerSocket(serverPort) // create a socket from the server port
         try 
-            val clientSocket: Socket = serverSocket.accept() // Accept a connection from a client
+            println(s"Server is listening on port $serverPort")
+            // blocks execution while waiting for a client connection
+            val clientSocket: Socket = serverSocket.accept() // .accept() listens on the created server socket 
+
+            // once a client connects to the socket, code begins executing here
             println("Client connected")
 
             // Create input and output streams to read from and write to the client
-            val input = new BufferedReader(new InputStreamReader(clientSocket.getInputStream))
-            val output = new PrintWriter(clientSocket.getOutputStream, true)
-
+            val input = BufferedReader(InputStreamReader(clientSocket.getInputStream))
+            val output = PrintWriter(clientSocket.getOutputStream, true)
             val clientMessage = input.readLine() // Read a message sent by the client
             println(s"Client says: $clientMessage")
 
@@ -38,7 +39,6 @@ object Server:
             // Clean up
             clientSocket.close()
         finally 
+            // if connection fails, remember to close the server socket
             serverSocket.close()
         
-    
-
