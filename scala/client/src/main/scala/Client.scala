@@ -5,7 +5,8 @@ import java.io.{BufferedReader, InputStreamReader, PrintWriter}
 
 object Client: 
     @main def init(): Unit = 
-        val serverAddress = "127.0.0.1" // the server's ip
+        // Initialize the connection with the created variables, then print success message
+        val serverAddress = "127.0.0.1" 
         val serverPort = 9998 
         val socket = Socket(serverAddress, serverPort)
         println("Connected to the server")
@@ -14,10 +15,8 @@ object Client:
         val input = BufferedReader(InputStreamReader(socket.getInputStream))
         val output = PrintWriter(socket.getOutputStream, true)
         
-        // Send a message to the server
+        // Send a message to the server, read input from server, then print it to the console
         output.println("Hello from the client!")
-        
-        // Read the server's response
         val serverResponse = input.readLine()
         println(s"Server says: $serverResponse")
 
