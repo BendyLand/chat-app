@@ -3,7 +3,7 @@ import usermanager.*
 import message.*
 import server.*
 
-@main def hello(): Unit =
+@main def run(): Unit =
     val user1 = User.create
     val user2 = User.create
     val userManager = UserManager
