@@ -1,5 +1,7 @@
 val scala3Version = "3.3.1"
 
+mainClass in Compile := Some("Main")
+
 lazy val root = project
   .in(file("."))
   .settings(
@@ -12,3 +14,6 @@ lazy val root = project
     
     scalacOptions ++= Seq("-deprecation")
   )
+
+lazy val client = project.in(file("client"))
+lazy val server = project.in(file("server"))

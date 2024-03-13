@@ -1,8 +1,12 @@
 package server
 
+// to use: run this file with scala Server.scala, then run scala Client.scala (both need a main method)
+import java.net.{ServerSocket, Socket}
+import java.io.{BufferedReader, InputStreamReader, PrintWriter}
 // import message.Message
 // import usermanager.*
 
+// TODO: old code. find a way to refactor into new code, or remove
 // class Server:
 //     def sendMessage(message: Message, to: String) = 
 //         var inbox = UserManager.users(to)("received")
@@ -10,17 +14,12 @@ package server
 //         outbox += message.body
 //         inbox += message.body
 
-
-// to use: run this file with scala Server.scala, then run scala Client.scala
-import java.net.{ServerSocket, Socket}
-import java.io.{BufferedReader, InputStreamReader, PrintWriter}
-
 object Server: 
     @main def init(): Unit = 
         val serverPort = 9998 // this is where the server port will listen
         val serverSocket = ServerSocket(serverPort) // create a socket from the server port
+        println(s"Server is listening on port $serverPort")
         try 
-            println(s"Server is listening on port $serverPort")
             // blocks execution while waiting for a client connection
             val clientSocket: Socket = serverSocket.accept() // .accept() listens on the created server socket 
 
@@ -39,6 +38,6 @@ object Server:
             // Clean up
             clientSocket.close()
         finally 
-            // if connection fails, remember to close the server socket
+            // if client connection fails, remember to close the server socket
             serverSocket.close()
         
